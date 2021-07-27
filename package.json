@@ -1,0 +1,35 @@
+{
+  "name": "start-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitaliy",
+  "license": "ISC",
+  "devDependencies": {
+    "cssmin": "^0.4.3",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "magnific-popup": "^1.1.0",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^8.0.1",
+    "slick-carousel": "^1.8.1",
+    "wow.js": "^1.2.2"
+  },
+  "dependencies": {
+    "animate.css": "^4.0.0",
+    "browser-sync": "^2.26.7",
+    "check": "^1.0.0",
+    "g": "^2.0.1",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.0.2",
+    "npm": "^6.14.4",
+    "swiper": "^5.3.8",
+    "updates": "^10.2.6"
+  }
+}

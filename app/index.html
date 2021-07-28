@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Kelnik</title>
+
+
+  <link rel="stylesheet" href="css/nouislider.min.css">
+
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+
 
 </head>
 
@@ -29,9 +32,18 @@
           <div class="table-head">
             <div class="head-scheme"><span>Планировка</span></div>
             <div class="head-type"><span>Квартира</span></div>
-            <div class="head-space"><span>S, м²</span></div>
-            <div class="head-floors"><span>Этаж</span></div>
-            <div class="head-price"><span>Цена</span></div>
+            <div class="head-space">
+              <span>S, м²</span>
+              <div class="arrows"></div>
+            </div>
+            <div class="head-floors">
+              <span>Этаж</span>
+              <div class="arrows"></div>
+            </div>
+            <div class="head-price active-head">
+              <span>Цена</span>
+              <div class="arrows"></div>
+            </div>
           </div>
 
           <div class="list-items">
@@ -181,28 +193,28 @@
           <li class="filter-item filters-price">
             <p>Стомость квартиры, ₽ </p>
             <div class="min-max">
-              <div class="min">от <span>5500000</span></div>
-              <div class="max">до <span>18900000</span></div>
+              <div class="min-price">от <span>5500000</span></div>
+              <div class="max-price">до <span>18900000</span></div>
             </div>
-            <div>
-              <input type="text" class="js-range-slider" name="my_range" value="" data-from="5500000"
-                data-to="18900000" />
-            </div>
+
+            <div id="range-slider1" class="range"></div>
 
           </li>
 
           <li class="filter-item filter-space">
             <p>Площадь, м²</p>
             <div class="min-max">
-              <div class="min">от <span>33</span></div>
-              <div class="max">до <span>123</span></div>
+              <div class="min-space">от <span>33</span></div>
+              <div class="max-space">до <span>123</span></div>
             </div>
             <div>
-              <input type="text" class="js-range-slider" name="my_range" value="" data-from="5500000"
-                data-to="18900000" />
+              <div id="range-slider2" class="range"></div>
+
             </div>
           </li>
-          <li class="filter-item filter-rset">Сбросить параметры x </li>
+          <li class="filter-item filter-rset">
+            Сбросить параметры x
+          </li>
         </ul>
 
       </form>
@@ -211,9 +223,7 @@
   </div>
 
 
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/ion.rangeSlider.min.js"></script>
+  <script src="js/nouislider.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

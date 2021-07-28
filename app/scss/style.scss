@@ -3,6 +3,10 @@
 
 
 
+.range {
+  margin: 25px 0px;
+}
+
 
 .content {
   position: relative;
@@ -42,24 +46,57 @@
       }
 
       .head-type {
-        min-width: 280px;
+        min-width: 277px;
         margin-right: 20px;
       }
 
       .head-space {
-        min-width: 32px;
-        margin-right: 110px;
+        display: flex;
+        min-width: 47px;
+        margin-right: 90px;
+        cursor: pointer;
       }
 
       .head-floors {
-        min-width: 33px;
-        margin-right: 107px;
+        min-width: 55px;
+        margin-right: 90px;
+        cursor: pointer;
+
       }
 
       .head-price {
-        min-width: 50px;
-        margin-right: 20px;
+        min-width: 55px;
+        margin-right: 90px;
+        cursor: pointer;
+
       }
+
+      .active-head {
+        color: #3EB57C;
+      }
+    }
+
+    .arrows {
+      position: relative;
+      display: inline-block;
+    }
+
+    .arrows::after {
+      content: '^';
+      font-size: 16px;
+      margin-left: 5px;
+      color: #000;
+      opacity: 0.4;
+    }
+
+    .arrows::before {
+      position: absolute;
+      content: '^';
+      font-size: 16px;
+      margin-left: 5px;
+      top: 0px;
+      transform: rotate(180deg);
+      opacity: 0.4;
     }
 
     .apartment-item {
@@ -154,7 +191,7 @@
     .min-max {
       display: flex;
       justify-content: space-between;
-      margin: 8px 0px -10px;
+      margin: 15px 0px -10px;
     }
 
     .min,
@@ -166,37 +203,6 @@
         line-height: 24px;
         font-weight: 800;
       }
-    }
-
-    .irs--flat .irs-line {
-      width: 320;
-      height: 3px;
-      background: linear-gradient(0deg, #0B1739, #0B1739),
-        #FF0000;
-      mix-blend-mode: normal;
-      opacity: 0.1;
-      border-radius: 1.5px;
-    }
-
-    .irs--flat .irs-bar {
-      top: 25px;
-      height: 3px;
-      background-color: #3EB57C;
-    }
-
-    .irs--flat .irs-handle>i:first-child {
-      top: -2px;
-      width: 14px;
-      height: 14px;
-      background-color: #3EB57C;
-      border-radius: 14px;
-      cursor: pointer;
-    }
-
-    .irs--flat .irs-from,
-    .irs--flat .irs-to,
-    .irs--flat .irs-single {
-      display: none;
     }
 
     .filter-space {
@@ -213,11 +219,7 @@
 }
 
 
-.irs--flat .irs-min,
-.irs--flat .irs-max {
-  display: none;
 
-}
 
 
 @import "media";

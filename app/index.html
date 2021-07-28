@@ -1,17 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Kelnik</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+
 </head>
+
 <body>
-  
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/libs.min.js"></script>
+
+
+  <div class="container">
+    <div class="content">
+
+      <div class="result">
+
+        <div class="title">
+          <h1>Квартиры</h1>
+        </div>
+
+        <div class="table">
+
+          <div class="table-head">
+            <div class="head-scheme"><span>Планировка</span></div>
+            <div class="head-type"><span>Квартира</span></div>
+            <div class="head-space"><span>S, м²</span></div>
+            <div class="head-floors"><span>Этаж</span></div>
+            <div class="head-price"><span>Цена</span></div>
+          </div>
+
+          <div class="list-items">
+            <div class="apartment-item">
+
+              <div class="scheme">
+                <img src="img/scheme.png" alt="scheme">
+              </div>
+
+              <div class="type">
+                <span>3-комнатная №104</span>
+              </div>
+
+              <div class="space">
+                <span>63.2</span>
+              </div>
+
+              <div class="floors">
+                <span>1 из 17</span>
+              </div>
+
+              <div class="price">
+                <span>6 630 500</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="list-items">
+            <div class="apartment-item">
+
+              <div class="scheme">
+                <img src="img/scheme.png" alt="scheme">
+              </div>
+
+              <div class="type">
+                <span>3-комнатная №104</span>
+              </div>
+
+              <div class="space">
+                <span>63.2</span>
+              </div>
+
+              <div class="floors">
+                <span>1 из 17</span>
+              </div>
+
+              <div class="price">
+                <span>6 630 500</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="list-items">
+            <div class="apartment-item">
+
+              <div class="scheme">
+                <img src="img/scheme.png" alt="scheme">
+              </div>
+
+              <div class="type">
+                <span>3-комнатная №104</span>
+              </div>
+
+              <div class="space">
+                <span>63.2</span>
+              </div>
+
+              <div class="floors">
+                <span>1 из 17</span>
+              </div>
+
+              <div class="price">
+                <span>6 630 500</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="list-items">
+            <div class="apartment-item">
+
+              <div class="scheme">
+                <img src="img/scheme.png" alt="scheme">
+              </div>
+
+              <div class="type">
+                <span>3-комнатная №104</span>
+              </div>
+
+              <div class="space">
+                <span>63.2</span>
+              </div>
+
+              <div class="floors">
+                <span>1 из 17</span>
+              </div>
+
+              <div class="price">
+                <span>6 630 500</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="list-items">
+            <div class="apartment-item">
+
+              <div class="scheme">
+                <img src="img/scheme.png" alt="scheme">
+              </div>
+
+              <div class="type">
+                <span>3-комнатная №104</span>
+              </div>
+
+              <div class="space">
+                <span>63.2</span>
+              </div>
+
+              <div class="floors">
+                <span>1 из 17</span>
+              </div>
+
+              <div class="price">
+                <span>6 630 500</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="btn">Загрузить еще</div>
+      </div>
+
+      <form class="filter">
+
+        <ul class="filter-list">
+          <li class="filter-item filter-type">
+            <div class="room active">1k</div>
+            <div class="room">2k</div>
+            <div class="room">3k</div>
+            <div class="room disable">4k</div>
+          </li>
+
+          <li class="filter-item filters-price">
+            <p>Стомость квартиры, ₽ </p>
+            <div class="min-max">
+              <div class="min">от <span>5500000</span></div>
+              <div class="max">до <span>18900000</span></div>
+            </div>
+            <div>
+              <input type="text" class="js-range-slider" name="my_range" value="" data-from="5500000"
+                data-to="18900000" />
+            </div>
+
+          </li>
+
+          <li class="filter-item filter-space">
+            <p>Площадь, м²</p>
+            <div class="min-max">
+              <div class="min">от <span>33</span></div>
+              <div class="max">до <span>123</span></div>
+            </div>
+            <div>
+              <input type="text" class="js-range-slider" name="my_range" value="" data-from="5500000"
+                data-to="18900000" />
+            </div>
+          </li>
+          <li class="filter-item filter-rset">Сбросить параметры x </li>
+        </ul>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/ion.rangeSlider.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

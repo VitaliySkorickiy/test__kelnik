@@ -1,0 +1,49 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  font-family: 'PTRootUIWebRegular';
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #E5E5E5;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  outline: none;
+}
+
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 96px 80px;
+}

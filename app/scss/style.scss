@@ -1,9 +1,223 @@
-@import "vars";
-@import "libs";
+@import "global";
 @import "fonts";
 
 
 
+
+.content {
+  position: relative;
+
+}
+
+.result {
+
+  .title {
+    margin-bottom: 50px;
+    font-family: 'PTRootUIWebBold', sans-serif;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 55px;
+  }
+
+  .table {
+    width: 800px;
+    top: 103px;
+    margin-bottom: 50px;
+    font-family: 'PTRootUIWebRegular', sans-serif;
+
+
+    .table-head {
+      display: flex;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      padding: 0px 50px 0px 0px;
+      min-width: 800px;
+      height: 36px;
+      box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+
+      .head-scheme {
+        min-width: 80px;
+        margin-right: 20px;
+      }
+
+      .head-type {
+        min-width: 280px;
+        margin-right: 20px;
+      }
+
+      .head-space {
+        min-width: 32px;
+        margin-right: 110px;
+      }
+
+      .head-floors {
+        min-width: 33px;
+        margin-right: 107px;
+      }
+
+      .head-price {
+        min-width: 50px;
+        margin-right: 20px;
+      }
+    }
+
+    .apartment-item {
+      display: flex;
+      min-height: 105px;
+      min-width: 800px;
+      padding: 15px 50px 20px 0px;
+      border-bottom: 1px solid #ccc;
+
+      .scheme {
+        min-width: 80px;
+        height: 80px;
+        margin-right: 20px;
+      }
+
+      .type {
+        min-width: 275px;
+        margin-right: 20px;
+      }
+
+      .space {
+        min-width: 120px;
+        margin-right: 20px;
+      }
+
+      .floors {
+        min-width: 110px;
+        margin-right: 20px;
+      }
+
+      .price {
+        min-width: 280px;
+        margin-right: 20px;
+      }
+    }
+
+  }
+
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 24px;
+    border: 1px solid rgba(11, 23, 57, 0.2);
+    border-radius: 25px;
+  }
+}
+
+.filter {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #AEE4B2;
+  width: 399px;
+  height: 372px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(174, 228, 178, 0.3) 0%, rgba(149, 208, 161, 0.3) 100%);
+  border-radius: 10px;
+
+  .filter-list {
+
+    .filter-type {
+      display: flex;
+      justify-content: space-between;
+      width: 224px;
+      height: 44px;
+      margin-bottom: 30px;
+
+      .room {
+        height: 44px;
+        width: 44px;
+        border-radius: 100px;
+        background-color: #fff;
+        text-align: center;
+        padding-top: 12px;
+        cursor: pointer;
+
+        &.active {
+          background-color: #3EB57C;
+          color: #fff;
+          background: #3EB57C;
+          box-shadow: 0px 6px 20px #95D0A1;
+          border-radius: 200px;
+        }
+
+        &.disable {
+          background-color: #fff;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .min-max {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0px -10px;
+    }
+
+    .min,
+    .max {
+      min-width: 200px;
+
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 800;
+      }
+    }
+
+    .irs--flat .irs-line {
+      width: 320;
+      height: 3px;
+      background: linear-gradient(0deg, #0B1739, #0B1739),
+        #FF0000;
+      mix-blend-mode: normal;
+      opacity: 0.1;
+      border-radius: 1.5px;
+    }
+
+    .irs--flat .irs-bar {
+      top: 25px;
+      height: 3px;
+      background-color: #3EB57C;
+    }
+
+    .irs--flat .irs-handle>i:first-child {
+      top: -2px;
+      width: 14px;
+      height: 14px;
+      background-color: #3EB57C;
+      border-radius: 14px;
+      cursor: pointer;
+    }
+
+    .irs--flat .irs-from,
+    .irs--flat .irs-to,
+    .irs--flat .irs-single {
+      display: none;
+    }
+
+    .filter-space {
+      margin-top: 10px;
+    }
+
+    .filter-rset {
+      margin: 30px 0px 7px;
+      cursor: pointer;
+    }
+
+
+  }
+}
+
+
+.irs--flat .irs-min,
+.irs--flat .irs-max {
+  display: none;
+
+}
 
 
 @import "media";

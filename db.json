@@ -1,0 +1,241 @@
+[{
+        "id": "092C04C4",
+        "rooms": "1",
+        "number": "№104",
+        "space": "63.1",
+        "floors": "1",
+        "cost": 4630500
+    },
+    {
+        "id": "CD32D6F8",
+        "rooms": "2",
+        "number": "№105",
+        "space": "43.1",
+        "floors": "2",
+        "cost": 5700500
+    },
+    {
+        "id": "1ACC55DD",
+        "rooms": "3",
+        "number": "№106",
+        "space": "105",
+        "floors": "3",
+        "cost": 6630500
+    },
+    {
+        "id": "5846D302",
+        "rooms": "1",
+        "number": "№107",
+        "space": "33.1",
+        "floors": "1",
+        "cost": 6630500
+    },
+    {
+        "id": "7B376F15",
+        "rooms": "2",
+        "number": "№108",
+        "space": "43.1",
+        "floors": "6",
+        "cost": 6630500
+    },
+    {
+        "id": "B838B70E",
+        "rooms": "3",
+        "number": "№109",
+        "space": "73.1",
+        "floors": "9",
+        "cost": 6630500
+    },
+    {
+        "id": "14058BE1",
+        "rooms": "1",
+        "number": "№110",
+        "space": "33.1",
+        "floors": "4",
+        "cost": 6630500
+    },
+    {
+        "id": "CA3DADEC",
+        "rooms": "2",
+        "number": "№111",
+        "space": "43.1",
+        "floors": "11",
+        "cost": 6630500
+    },
+    {
+        "id": "B7F325C0",
+        "rooms": "3",
+        "number": "№112",
+        "space": "63.1",
+        "floors": "8",
+        "cost": 6630500
+    },
+    {
+        "id": "25B35A6A",
+        "rooms": "4",
+        "number": "№113",
+        "space": "163.1",
+        "floors": "7",
+        "cost": 6630500
+    },
+    {
+        "id": "49FA52FB",
+        "rooms": "1",
+        "number": "№114",
+        "space": "33.1",
+        "floors": "5",
+        "cost": 6630500
+    },
+    {
+        "id": "5481519A",
+        "rooms": "2",
+        "number": "№115",
+        "space": "113.1",
+        "floors": "9",
+        "cost": 6630500
+    },
+    {
+        "id": "6AC9EAA8",
+        "rooms": "3",
+        "number": "№116",
+        "space": "123.1",
+        "floors": "1",
+        "cost": 6630500
+    },
+    {
+        "id": "55565D60",
+        "rooms": "1",
+        "number": "№117",
+        "space": "33.1",
+        "floors": "3",
+        "cost": 6630500
+    },
+    {
+        "id": "2E0179D9",
+        "rooms": "1",
+        "number": "№118",
+        "space": "33.1",
+        "floors": "7",
+        "cost": 6630500
+    },
+    {
+        "id": "991975D7",
+        "rooms": "1",
+        "number": "№119",
+        "space": "33.1",
+        "floors": "5",
+        "cost": 6630500
+    },
+    {
+        "id": "631C1DF2",
+        "rooms": "2",
+        "number": "№120",
+        "space": "43.1",
+        "floors": "5",
+        "cost": 6630500
+    },
+    {
+        "id": "525F8249",
+        "rooms": "1",
+        "number": "№121",
+        "space": "33.1",
+        "floors": "2",
+        "cost": 6630500
+    },
+    {
+        "id": "22A4C94F",
+        "rooms": "3",
+        "number": "№122",
+        "space": "63.1",
+        "floors": "1",
+        "cost": 6630500
+    },
+    {
+        "id": "F8B33B52",
+        "rooms": "3",
+        "number": "№123",
+        "space": "63.1",
+        "floors": "6",
+        "cost": 6630500
+    },
+    {
+        "id": "134ED66E",
+        "rooms": "1",
+        "number": "№124",
+        "space": "33.1",
+        "floors": "11",
+        "cost": 6630500
+    },
+    {
+        "id": "1BDF0DF2",
+        "rooms": "4",
+        "number": "№125",
+        "space": "120.1",
+        "floors": "12",
+        "cost": 6630500
+    },
+    {
+        "id": "1044AD26",
+        "rooms": "1",
+        "number": "№126",
+        "space": "29",
+        "floors": "13",
+        "cost": 6630500
+    },
+    {
+        "id": "16A43C1D",
+        "rooms": "1",
+        "number": "№127",
+        "space": "33.1",
+        "floors": "14",
+        "cost": 6630500
+    },
+    {
+        "id": "72E074E5",
+        "rooms": "2",
+        "number": "№128",
+        "space": "45",
+        "floors": "15",
+        "cost": 6630500
+    },
+    {
+        "id": "23BF8BD6",
+        "rooms": "1",
+        "number": "№129",
+        "space": "33.1",
+        "floors": "16",
+        "cost": 6630500
+    },
+    {
+        "id": "19A522AD",
+        "rooms": "3",
+        "number": "№130",
+        "space": "76",
+        "floors": "17",
+        "cost": 6630500
+    },
+    {
+        "id": "1960BE17",
+        "rooms": "2",
+        "number": "№131",
+        "space": "50",
+        "floors": "8",
+        "cost": 6630500
+    },
+    {
+        "id": "D0417BEF",
+        "rooms": "1",
+        "number": "№132",
+        "space": "30",
+        "floors": "9",
+        "cost": 6630500
+    },
+    {
+        "id": "CB9F996E",
+        "rooms": "2",
+        "number": "№133",
+        "space": "43.1",
+        "floors": "1",
+        "cost": 6630500
+    }
+]

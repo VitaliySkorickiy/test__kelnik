@@ -3,14 +3,13 @@
 
 
 
+
 .range {
   margin: 25px 0px;
 }
 
-
 .content {
   position: relative;
-
 }
 
 .result {
@@ -28,7 +27,6 @@
     top: 103px;
     margin-bottom: 50px;
     font-family: 'PTRootUIWebRegular', sans-serif;
-
 
     .table-head {
       display: flex;
@@ -68,7 +66,6 @@
         min-width: 55px;
         margin-right: 90px;
         cursor: pointer;
-
       }
 
       .active-head {
@@ -213,13 +210,24 @@
       margin: 30px 0px 7px;
       cursor: pointer;
     }
-
-
   }
 }
 
 
+.up {
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 30;
+  cursor: pointer;
+  transition: 1s all;
+}
 
-
+.show {
+  opacity: 1;
+}
 
 @import "media";

@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  // scroll-behavior: smooth;
 }
 
 *,
@@ -42,8 +43,10 @@ h6 {
 }
 
 .container {
+  position: relative;
   background-color: #fff;
   max-width: 1440px;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 96px 80px;
 }

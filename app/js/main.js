@@ -1,12 +1,105 @@
-
 console.log(1);
 
+const listItems = document.querySelector('.list-items');
 const slider1 = document.getElementById('range-slider1');
 const slider2 = document.getElementById('range-slider2');
 const minPrice = document.querySelector('.min-price');
 const maxPrice = document.querySelector('.max-price');
 const minSpace = document.querySelector('.min-space');
 const maxSpace = document.querySelector('.max-space');
+const filterRset = document.querySelector('.filter-rset')
+
+const roomsBtnFilter = document.querySelectorAll('.room')
+
+
+filterRset.addEventListener('click', () => {
+  getListCard(false)
+})
+
+const delActive = (item) => {
+  item.forEach(el => el.classList.remove('active'))
+}
+
+roomsBtnFilter.forEach(item => {
+  item.addEventListener('click', () => {
+    delActive(roomsBtnFilter)
+    item.classList.add('active')
+    let num = item.textContent.charAt(0)
+    getListCard(num)
+  })
+})
+
+
+
+const getData = async (url) => {
+  const data = await fetch(url)
+
+  if (!data.ok) {
+    throw new Error(`Данные не получены ${data.status} ${data.statusText}`)
+  }
+  return data.json()
+}
+
+const getListCard = (num) => {
+  getData('http://127.0.0.1:5501/db.json')
+    .then(data => {
+      renderCart(data, num)
+    })
+    .catch(err => {
+      console.error(err);
+    })
+
+}
+getListCard(false)
+//  ==========================
+
+const renderCart = (data, rooms) => {
+  listItems.textContent = '';
+
+  if (rooms) {
+    data = data.filter(item => {
+      return item.rooms == rooms
+    })
+  }
+
+  data.forEach(({ rooms, number, space, floors, cost }) => {
+
+    const div = document.createElement('div');
+    div.classList.add("apartment-item");
+    div.setAttribute('data-type', `${rooms}`)
+    div.setAttribute('data-space', `${space}`)
+    div.setAttribute('data-price', `${cost}`)
+
+    div.innerHTML = ` 
+
+              <div class="scheme">
+                <img src="img/scheme.png" alt="scheme">
+              </div>
+
+              <div class="type">
+                <span>${rooms}-комнатная ${number}</span>
+              </div>
+
+              <div class="space">
+                <span>${space}</span>
+              </div>
+
+              <div class="floors">
+                <span>${floors} из 17</span>
+              </div>
+
+              <div class="price">
+                <span>${cost}</span>
+              </div>
+  
+    `;
+    listItems.append(div)
+  })
+
+}
+
+
+// ====================================
 
 const hsowSlidersValues = (slider, minDiv, maxDiv) => {
 
@@ -45,3 +138,39 @@ if (slider2) {
   hsowSlidersValues(slider2, minSpace, maxSpace);
 }
 
+//  scroll  =====================
+
+const goUp = document.querySelector('.up')
+
+window.addEventListener('scroll', () => {
+  if (document.documentElement.scrollTop > 500) {
+    goUp.classList.add('show');
+  } else {
+    goUp.classList.remove('show');
+  }
+});
+
+let t;
+
+const up = () => {
+  let top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+
+  if (top > 0) {
+    window.scrollBy(0, ((top + 100) / -10));
+    t = setTimeout('up()', 20);
+  } else clearTimeout(t);
+  return false;
+}
+
+goUp.addEventListener('click', up)
+
+// ===================================  sort
+
+
+// const cards = document.querySelector('.list-items').children
+
+// const cardsArr = Array.from(cards)
+
+// console.log(cardsArr);
+
+// cards.map(item => console.log(item))

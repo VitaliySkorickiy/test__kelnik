@@ -1,4 +1,3 @@
-console.log(1);
 
 const listItems = document.querySelector('.list-items');
 const slider1 = document.getElementById('range-slider1');
@@ -7,29 +6,31 @@ const minPrice = document.querySelector('.min-price');
 const maxPrice = document.querySelector('.max-price');
 const minSpace = document.querySelector('.min-space');
 const maxSpace = document.querySelector('.max-space');
-const filterRset = document.querySelector('.filter-rset')
+const filterReset = document.querySelector('.filter-rset')
 
 const roomsBtnFilter = document.querySelectorAll('.room')
 
-
-filterRset.addEventListener('click', () => {
+filterReset.addEventListener('click', () => {
   getListCard(false)
+  removeActive(roomsBtnFilter)
+  slider1.noUiSlider.reset()
+  slider2.noUiSlider.reset()
 })
 
-const delActive = (item) => {
+const removeActive = (item) => {
   item.forEach(el => el.classList.remove('active'))
 }
 
 roomsBtnFilter.forEach(item => {
   item.addEventListener('click', () => {
-    delActive(roomsBtnFilter)
+    slider1.noUiSlider.reset()
+    slider2.noUiSlider.reset()
+    removeActive(roomsBtnFilter)
     item.classList.add('active')
     let num = item.textContent.charAt(0)
     getListCard(num)
   })
 })
-
-
 
 const getData = async (url) => {
   const data = await fetch(url)
@@ -42,14 +43,46 @@ const getData = async (url) => {
 
 const getListCard = (num) => {
   getData('http://127.0.0.1:5501/db.json')
+
     .then(data => {
+
+      slider1.noUiSlider.on('change', (values) => {
+        slider2.noUiSlider.reset()
+        removeActive(roomsBtnFilter)
+        let resultFilterCost = data.filter(item => item.cost > values[0] && item.cost < values[1])
+        renderCart(resultFilterCost)
+      })
+
+      slider2.noUiSlider.on('change', (values) => {
+        slider1.noUiSlider.reset()
+        removeActive(roomsBtnFilter)
+        let resultFilterSpace = data.filter(item => item.space > Math.round(values[0]) && item.space < Math.round(values[1]))
+        renderCart(resultFilterSpace)
+      })
+
       renderCart(data, num)
+
+      const disabled = (countRoom) => {
+        if (data.filter(item => item.rooms == countRoom).length == 0) {
+          roomsBtnFilter.forEach(item => {
+            item.textContent.charAt(0) == countRoom ? item.classList.add('disabled') : null
+          })
+        }
+      }
+
+      disabled(1)
+      disabled(2)
+      disabled(3)
+      disabled(4)
     })
     .catch(err => {
       console.error(err);
     })
 
 }
+
+
+
 getListCard(false)
 //  ==========================
 
@@ -66,9 +99,6 @@ const renderCart = (data, rooms) => {
 
     const div = document.createElement('div');
     div.classList.add("apartment-item");
-    div.setAttribute('data-type', `${rooms}`)
-    div.setAttribute('data-space', `${space}`)
-    div.setAttribute('data-price', `${cost}`)
 
     div.innerHTML = ` 
 
@@ -85,7 +115,7 @@ const renderCart = (data, rooms) => {
               </div>
 
               <div class="floors">
-                <span>${floors} из 17</span>
+                ${floors}<span> из 17 этаж</span>
               </div>
 
               <div class="price">
@@ -99,6 +129,7 @@ const renderCart = (data, rooms) => {
 }
 
 
+
 // ====================================
 
 const hsowSlidersValues = (slider, minDiv, maxDiv) => {
@@ -109,15 +140,16 @@ const hsowSlidersValues = (slider, minDiv, maxDiv) => {
 
     let maxValues = Math.round(values[1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     maxDiv.querySelector('span').textContent = maxValues;
+
   })
 }
 
 if (slider1) {
   noUiSlider.create(slider1, {
-    start: [5500000, 18900000],
+    start: [900000, 35000000],
     connect: true,
     range: {
-      'min': 0,
+      'min': 900000,
       'max': 35000000
     }
   });
@@ -127,7 +159,7 @@ if (slider1) {
 
 if (slider2) {
   noUiSlider.create(slider2, {
-    start: [33, 123],
+    start: [10, 220],
     connect: true,
     range: {
       'min': 10,
@@ -137,6 +169,8 @@ if (slider2) {
 
   hsowSlidersValues(slider2, minSpace, maxSpace);
 }
+
+
 
 //  scroll  =====================
 
@@ -174,3 +208,8 @@ goUp.addEventListener('click', up)
 // console.log(cardsArr);
 
 // cards.map(item => console.log(item))
+
+
+const filter = (data, room, costMin, costMax, spaceMin, spaceMax) => {
+
+}

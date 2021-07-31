@@ -66,7 +66,7 @@ const getData = async (url) => {
 }
 
 const getListCard = (num) => {
-  getData('http://127.0.0.1:5501/db.json')
+  getData('db.json')
 
     .then(data => {
 

@@ -70,9 +70,6 @@ const getListCard = (num) => {
 
     .then(data => {
 
-      console.log(countCards);
-      console.log(data.length);
-
       if (countCards >= data.length) {
         btn.style.display = 'none'
       }

@@ -1,0 +1,197 @@
+@media (max-width:1440px) {
+
+  .container {
+    max-width: 960px;
+    padding: 48px 54px;
+  }
+
+
+
+  .result {
+    max-width: 506px;
+
+
+
+
+    .title {
+      margin-bottom: 50px;
+      font-weight: 700;
+      font-size: 27px;
+      line-height: 55px;
+    }
+
+    .table {
+      max-width: 508px;
+      top: 103px;
+      margin-bottom: 50px;
+
+      .table-head {
+        display: flex;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 0px 50px 0px 0px;
+        height: 36px;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+
+
+        .head-scheme {
+          display: none;
+
+        }
+
+        .head-type {
+          display: none;
+        }
+
+        .head-space {
+          display: flex;
+          min-width: 47px;
+          margin-right: 35px;
+          cursor: pointer;
+        }
+
+        .head-floors {
+          min-width: 55px;
+          margin-right: 35px;
+          cursor: pointer;
+
+        }
+
+        .head-price {
+          min-width: 55px;
+          margin-right: 0px;
+          cursor: pointer;
+        }
+
+        .active-head {
+          color: #3EB57C;
+        }
+      }
+
+      .apartment-item {
+        display: flex;
+        flex-direction: row-reverse;
+        min-height: 105px;
+        max-width: 506px;
+        padding: 16px 0px 15px 24px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+
+        .type-wrap {
+          display: block;
+        }
+
+        .item-wrap {
+          display: block;
+        }
+
+        .scheme {
+          min-width: 80px;
+          height: 80px;
+          margin-right: 20px;
+        }
+
+        .type {
+          min-width: 5px;
+          margin-right: 0px;
+          margin-bottom: 16px;
+        }
+
+        .space {
+          min-width: 65px;
+          margin-right: 10px;
+
+          &::after {
+            content: 'м²';
+
+          }
+        }
+
+        .floors {
+          min-width: 95px;
+          margin-right: 20px;
+
+          span {
+            opacity: 0.5;
+          }
+        }
+
+        .price {
+          min-width: 90px;
+          margin-right: 105px;
+
+          &::after {
+            content: '\20BD';
+
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .filter {
+    width: 318px;
+    height: 318px;
+    padding: 20px;
+
+    .filter-list {
+
+      .filter-type {
+        display: flex;
+        justify-content: space-between;
+        width: 224px;
+        height: 44px;
+        margin-bottom: 24px;
+
+      }
+
+      .min-max {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0px -10px;
+      }
+
+      .min-price,
+      .max-price,
+      .min-space,
+      .max-space {
+
+        span {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+
+      .max-space {
+        margin-right: 88px;
+      }
+
+      .max-price {
+        margin-right: 30px;
+      }
+
+
+      .filter-space {
+        margin-top: 10px;
+      }
+
+      .filter-rset {
+        margin: 30px 0px 7px;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+}

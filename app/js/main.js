@@ -148,22 +148,33 @@ const renderCart = (data, toggle, countCards = 5) => {
                 <img src="img/scheme.png" alt="scheme">
               </div>
 
-              <div class="type">
-                <span>${rooms}-комнатная ${number}</span>
+              <div  class="item-wrap">
+
+                <div class="type-wrap">
+                  <div class="type">
+                    <span>${rooms}-комнатная ${number}</span>
+                  </div>
+                </div>
+
+              <div/>
+
+              <div class="filterhead-wrap">
+
+                <div class="space">
+                  <span>${space}</span>
+                </div>
+
+                <div class="floors">
+                  ${floors}<span> из 17 этаж</span>
+                </div>
+
+                <div class="price">
+                  <span>${cost}</span>
+                </div>
+
               </div>
 
-              <div class="space">
-                <span>${space}</span>
-              </div>
-
-              <div class="floors">
-                ${floors}<span> из 17 этаж</span>
-              </div>
-
-              <div class="price">
-                <span>${cost}</span>
-              </div>
-  
+            </div>
     `;
     listItems.append(div)
   })

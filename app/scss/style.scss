@@ -105,14 +105,24 @@
     .apartment-item {
       display: flex;
       min-height: 105px;
-      min-width: 800px;
       padding: 15px 50px 20px 0px;
       border-bottom: 1px solid #ccc;
+
 
       .scheme {
         min-width: 80px;
         height: 80px;
         margin-right: 20px;
+      }
+
+      .filterhead-wrap {
+        display: flex;
+      }
+
+      .type-wrap {}
+
+      .item-wrap {
+        display: flex;
       }
 
       .type {
@@ -200,18 +210,28 @@
     .min-max {
       display: flex;
       justify-content: space-between;
-      margin: 15px 0px -10px;
+      margin: 10px 0px -10px;
     }
 
-    .min,
-    .max {
-      min-width: 200px;
+    .min-price,
+    .max-price,
+    .min-space,
+    .max-space {
 
       span {
         font-size: 16px;
         line-height: 24px;
-        font-weight: 800;
+        font-weight: 700;
+        opacity: 1 !important;
       }
+    }
+
+    .max-space {
+      margin-right: 108px;
+    }
+
+    .max-price {
+      margin-right: 50px;
     }
 
     .filter-space {

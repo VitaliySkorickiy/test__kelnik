@@ -7,27 +7,35 @@ const maxPrice = document.querySelector('.max-price');
 const minSpace = document.querySelector('.min-space');
 const maxSpace = document.querySelector('.max-space');
 const filterReset = document.querySelector('.filter-rset')
+const btn = document.querySelector('.btn')
 
 const roomsBtnFilter = document.querySelectorAll('.room')
 
 const filterHead = document.querySelectorAll('.filter-head')
 
+let countCards = 5
+
 filterReset.addEventListener('click', () => {
   getListCard(false)
-  removeActive(roomsBtnFilter)
+  removeActive(roomsBtnFilter, 'active')
   removeActive(filterHead, 'active-head')
   slider1.noUiSlider.reset()
   slider2.noUiSlider.reset()
-
 })
 
 const removeActive = (item, clazz) => {
   item.forEach(el => el.classList.remove(clazz))
 }
 
+btn.addEventListener('click', () => {
+  countCards += 20
+  getListCard(countCards)
+})
+
 roomsBtnFilter.forEach(item => {
   item.addEventListener('click', () => {
     removeActive(roomsBtnFilter, 'active')
+    removeActive(filterHead, 'active-head')
     slider1.noUiSlider.reset()
     slider2.noUiSlider.reset()
     item.classList.add('active')
@@ -39,6 +47,7 @@ roomsBtnFilter.forEach(item => {
 filterHead.forEach((item, id) => {
   item.addEventListener('click', () => {
     removeActive(filterHead, 'active-head')
+    removeActive(roomsBtnFilter, 'active')
     slider1.noUiSlider.reset()
     slider2.noUiSlider.reset()
     item.classList.add('active-head')
@@ -60,6 +69,13 @@ const getListCard = (num) => {
   getData('http://127.0.0.1:5501/db.json')
 
     .then(data => {
+
+      console.log(countCards);
+      console.log(data.length);
+
+      if (countCards >= data.length) {
+        btn.style.display = 'none'
+      }
 
       slider1.noUiSlider.on('change', (values) => {
         slider2.noUiSlider.reset()
@@ -88,19 +104,21 @@ const getListCard = (num) => {
       disabled(3)
       disabled(4)
 
-      renderCart(data, num)
+      renderCart(data, num, countCards)
     })
     .catch(err => {
       console.error(err);
     })
 
 }
-getListCard(false)
+getListCard()
 
 //  ==========================
 
-const renderCart = (data, toggle) => {
+const renderCart = (data, toggle, countCards = 5) => {
   listItems.textContent = '';
+
+  data.length = countCards
 
   if (toggle && toggle < 5) {
     data = data.filter(item => {
@@ -120,8 +138,8 @@ const renderCart = (data, toggle) => {
 
   data.forEach(({ rooms, number, space, floors, cost }) => {
 
-    const div = document.createElement('div');
 
+    const div = document.createElement('div');
     div.classList.add("apartment-item");
 
     div.innerHTML = ` 
@@ -151,7 +169,7 @@ const renderCart = (data, toggle) => {
   })
 }
 
-// ====================================
+// ================= R a n g e ===================
 
 const hsowSlidersValues = (slider, minDiv, maxDiv) => {
 

@@ -10,24 +10,39 @@ const filterReset = document.querySelector('.filter-rset')
 
 const roomsBtnFilter = document.querySelectorAll('.room')
 
+const filterHead = document.querySelectorAll('.filter-head')
+
 filterReset.addEventListener('click', () => {
   getListCard(false)
   removeActive(roomsBtnFilter)
+  removeActive(filterHead, 'active-head')
   slider1.noUiSlider.reset()
   slider2.noUiSlider.reset()
+
 })
 
-const removeActive = (item) => {
-  item.forEach(el => el.classList.remove('active'))
+const removeActive = (item, clazz) => {
+  item.forEach(el => el.classList.remove(clazz))
 }
 
 roomsBtnFilter.forEach(item => {
   item.addEventListener('click', () => {
+    removeActive(roomsBtnFilter, 'active')
     slider1.noUiSlider.reset()
     slider2.noUiSlider.reset()
-    removeActive(roomsBtnFilter)
     item.classList.add('active')
     let num = item.textContent.charAt(0)
+    getListCard(num)
+  })
+})
+
+filterHead.forEach((item, id) => {
+  item.addEventListener('click', () => {
+    removeActive(filterHead, 'active-head')
+    slider1.noUiSlider.reset()
+    slider2.noUiSlider.reset()
+    item.classList.add('active-head')
+    let num = id + 6;
     getListCard(num)
   })
 })
@@ -48,19 +63,17 @@ const getListCard = (num) => {
 
       slider1.noUiSlider.on('change', (values) => {
         slider2.noUiSlider.reset()
-        removeActive(roomsBtnFilter)
+        removeActive(roomsBtnFilter, 'active')
         let resultFilterCost = data.filter(item => item.cost > values[0] && item.cost < values[1])
         renderCart(resultFilterCost)
       })
 
       slider2.noUiSlider.on('change', (values) => {
         slider1.noUiSlider.reset()
-        removeActive(roomsBtnFilter)
+        removeActive(roomsBtnFilter, 'active')
         let resultFilterSpace = data.filter(item => item.space > Math.round(values[0]) && item.space < Math.round(values[1]))
         renderCart(resultFilterSpace)
       })
-
-      renderCart(data, num)
 
       const disabled = (countRoom) => {
         if (data.filter(item => item.rooms == countRoom).length == 0) {
@@ -74,30 +87,41 @@ const getListCard = (num) => {
       disabled(2)
       disabled(3)
       disabled(4)
+
+      renderCart(data, num)
     })
     .catch(err => {
       console.error(err);
     })
 
 }
-
-
-
 getListCard(false)
+
 //  ==========================
 
-const renderCart = (data, rooms) => {
+const renderCart = (data, toggle) => {
   listItems.textContent = '';
 
-  if (rooms) {
+  if (toggle && toggle < 5) {
     data = data.filter(item => {
-      return item.rooms == rooms
+      return item.rooms == toggle
     })
+  }
+
+  if (toggle == 6) {
+    data = data.sort((a, b) => parseFloat(a.space) - parseFloat(b.space))
+
+  } else if (toggle == 7) {
+    data.sort((a, b) => parseFloat(a.floors) - parseFloat(b.floors))
+
+  } else if (toggle == 8) {
+    data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
   }
 
   data.forEach(({ rooms, number, space, floors, cost }) => {
 
     const div = document.createElement('div');
+
     div.classList.add("apartment-item");
 
     div.innerHTML = ` 
@@ -125,10 +149,7 @@ const renderCart = (data, rooms) => {
     `;
     listItems.append(div)
   })
-
 }
-
-
 
 // ====================================
 
@@ -170,8 +191,6 @@ if (slider2) {
   hsowSlidersValues(slider2, minSpace, maxSpace);
 }
 
-
-
 //  scroll  =====================
 
 const goUp = document.querySelector('.up')
@@ -198,18 +217,6 @@ const up = () => {
 
 goUp.addEventListener('click', up)
 
-// ===================================  sort
 
 
-// const cards = document.querySelector('.list-items').children
 
-// const cardsArr = Array.from(cards)
-
-// console.log(cardsArr);
-
-// cards.map(item => console.log(item))
-
-
-const filter = (data, room, costMin, costMax, spaceMin, spaceMax) => {
-
-}

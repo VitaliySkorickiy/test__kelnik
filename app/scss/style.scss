@@ -74,24 +74,32 @@
     .arrows {
       position: relative;
       display: inline-block;
+      height: 10px;
+      width: 10px;
+      margin-bottom: 5px;
     }
 
     .arrows::after {
-      content: '^';
-      font-size: 16px;
+      content: '>';
+      line-height: 33px;
+      position: absolute;
+      font-size: 10px;
       margin-left: 5px;
-      color: #000;
+      top: -8px;
+      transform: rotate(-90deg);
       opacity: 0.4;
+      margin-left: 6px;
     }
 
     .arrows::before {
-      position: absolute;
-      content: '^';
-      font-size: 16px;
+      content: '>';
+      font-size: 10px;
       margin-left: 5px;
-      top: 0px;
-      transform: rotate(180deg);
+      color: #000;
       opacity: 0.4;
+      transform: rotate(90deg);
+      position: absolute;
+      top: 5px;
     }
 
     .apartment-item {
@@ -113,12 +121,12 @@
       }
 
       .space {
-        min-width: 92px;
+        min-width: 120px;
         margin-right: 20px;
       }
 
       .floors {
-        min-width: 140px;
+        min-width: 110px;
         margin-right: 20px;
 
         span {
